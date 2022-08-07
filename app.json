@@ -22,7 +22,7 @@
     "android": {
       "package":"fitwithme.exerciseapp",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/logo.png",
+        "foregroundImage": "./assets/logo_apk.png",
         "backgroundColor": "#88AAEB"
       }
     },
