@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ExerciseApps",
-    "slug": "ExerciseApps",
+    "name": "Fit With Me",
+    "slug": "FitWithMe",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/logo.png",
@@ -20,13 +20,14 @@
       "supportsTablet": true
     },
     "android": {
+      "package":"fitwithme.exerciseapp",
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#88AAEB"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logo.png"
     }
   }
 }
