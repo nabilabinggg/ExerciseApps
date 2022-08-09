@@ -1,10 +1,10 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import {
   View,
   Text,
   TouchableOpacity,
   TextInput,
-  StyleSheet
+  StyleSheet,
 } from "react-native";
 import PopUp from "./Popup";
 
@@ -44,51 +44,63 @@ class BMI extends Component {
   };
 
   render() {
+    const submitAndClear = () => {
+      this.calculate(this.state.height, this.state.weight);
+      this.setState({
+        height: "",
+        weight: "",
+      });
+    };
+
     return (
       <View style={styles.container}>
         <View style={styles.block}>
           <View>
-          <PopUp/>
-          <View
-            style={{
-              height: 100,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Text
+            <PopUp />
+            <View
               style={{
-                color: "white",
-                textAlign: "center",
-                fontSize: 35,
-                fontWeight: "bold",
+                height: 100,
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
-              Kalkulator IMT
-            </Text>
-          </View>
+              <Text
+                style={{
+                  color: "white",
+                  textAlign: "center",
+                  fontSize: 35,
+                  fontWeight: "bold",
+                }}
+              >
+                Kalkulator IMT
+              </Text>
+            </View>
           </View>
 
           <Text style={styles.label}>Tinggi Badan</Text>
           <TextInput
             style={styles.input}
+            keyboardType="numeric"
             underlineColorAndroid="transparent"
             placeholder="Tinggi Badan (Cm)"
             autoCapitalize="none"
+            value={this.state.height}
             onChangeText={this.handleHeight}
           />
           <Text style={styles.label}>Berat Badan</Text>
           <TextInput
             style={styles.input}
+            keyboardType="numeric"
             underlineColorAndroid="transparent"
             placeholder="Berat Badan (Kg)"
             autoCapitalize="none"
+            value={this.state.weight}
             onChangeText={this.handleWeight}
           />
 
           <TouchableOpacity
             style={styles.submitButton}
-            onPress={() => this.calculate(this.state.height, this.state.weight)}
+            onPress={submitAndClear}
           >
             <Text style={styles.submitButtonText}> Hitung </Text>
           </TouchableOpacity>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useFocusEffect} from "@react-navigation/native";
 import {
   View,
   Text,
@@ -53,6 +54,15 @@ export const SignIn = ({ navigation }) => {
         Alert.alert("Login gagal!", "Username/password salah");
       });
   };
+
+  useFocusEffect(
+    React.useCallback(() => {
+      return () => {
+        setUsername('');
+        setPassword('');
+      };
+    }, [])
+  );
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
