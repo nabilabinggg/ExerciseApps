@@ -21,6 +21,11 @@ const Profile = () => {
     });
   };
 
+  const logout = async () => {
+    await AsyncStorage.clear();
+    navigation.navigate("Auth")
+  };
+
   useEffect(() => {
     if ("session_id") {
       displayUser();
@@ -28,11 +33,6 @@ const Profile = () => {
       logout();
     }
   }, []);
-
-  const logout = async () => {
-    await AsyncStorage.clear();
-    navigation.replace("SignIn")
-  };
 
   return (
     <View style={[styles.container]}>

@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
-import { ActivityIndicator, StyleSheet } from "react-native-web";
+import { ActivityIndicator, StyleSheet } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Auth = ({ navigation }) => {
   useEffect(() => {
-    const validationSession = async () => {
+    const _validationSession = async () => {
       const isLogin = await AsyncStorage.getItem("session_id");
       navigation.replace(isLogin ? "Home" : "SignIn");
     };
-    validationSession();
-  }, []);
+    _validationSession();
+  },[]);
 
   return (
     <ActivityIndicator
