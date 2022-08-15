@@ -1,7 +1,8 @@
 import React, { useState, useCallback, useEffect } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, ScrollView } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 import axios from "axios";
+import { JumpingTransition } from "react-native-reanimated";
 
 const VideoPlay = ({ route }) => {
   const { itemId } = route.params;
@@ -27,9 +28,11 @@ const VideoPlay = ({ route }) => {
 
   return (
     <View style={[styles.container]}>
+      <ScrollView showsVerticalScrollIndicator={false}>
       <View
         style={{
-          paddingHorizontal: 20
+          paddingHorizontal: 20,
+          paddingVertical: 40
         }}
       >
         <YoutubePlayer
@@ -39,8 +42,11 @@ const VideoPlay = ({ route }) => {
           videoId={videos.youtubeId}
           onChangeState={onStateChange}
         />
-        <Text style={{color:"white", fontSize:16, fontWeight:"bold"}}>{videos.name}</Text>
+        <Text style={{color:"white", fontSize: 18, fontWeight:"bold"}}>{videos.name}</Text>
+        <View style={{borderBottomColor: "white", borderBottomWidth: 1, marginVertical: 10, opacity:0.5}}></View>
+        <Text style={{color:"white", fontSize: 13, letterSpacing: 1}}>{videos.step}</Text>
       </View>
+      </ScrollView>
     </View>
   );
 };
@@ -49,7 +55,6 @@ export default VideoPlay;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#5A80E8",
-    justifyContent:"center"
+    backgroundColor: "#5A80E8"
   },
 });

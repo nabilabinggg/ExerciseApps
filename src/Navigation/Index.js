@@ -11,9 +11,13 @@ import Home from "../Home/Index";
 import VideoPlay from "../Video/VideoPlay";
 import { Ionicons } from "@expo/vector-icons";
 import DanceCategory from "../Video/Dance/Category";
-import UpperCategory from "../Video/Upper/Category";
-import LowerCategory from "../Video/Lower/Category";
+import UpperCategory from "../Video/Chest/Category";
+import LowerCategory from "../Video/Thighs/Category";
 import Profile from "../Profile";
+import ChestCategory from "../Video/Chest/Category";
+import ThighsCategory from "../Video/Thighs/Category";
+import ArmsCategory from "../Video/Arms/Category";
+import AbsCategory from "../Video/Abs/Category";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -61,12 +65,20 @@ function ComponentVidStackScreen() {
         component={DanceCategory}
       />
       <ComponentVidStack.Screen
-        name="Upper Body Workout"
-        component={UpperCategory}
+        name="Chest Workout"
+        component={ChestCategory}
       />
       <ComponentVidStack.Screen
-        name="Lower Body Workout"
-        component={LowerCategory}
+        name="Thighs Workout"
+        component={ThighsCategory}
+      />
+      <ComponentVidStack.Screen
+        name="Arms Workout"
+        component={ArmsCategory}
+      />
+      <ComponentVidStack.Screen
+        name="Abs Workout"
+        component={AbsCategory}
       />
       <ComponentVidStack.Screen name="Pemutar Video" component={VideoPlay} />
     </ComponentVidStack.Navigator>

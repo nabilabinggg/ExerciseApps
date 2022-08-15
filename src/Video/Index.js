@@ -4,9 +4,11 @@ import {
   ScrollView,
   StyleSheet
 } from "react-native";
-import UpperPage from "../Video/Upper/Index";
-import LowerPage from "./Lower/Index";
 import DancePage from "./Dance/Index";
+import ChestPage from "./Chest/Index";
+import ThighsPage from "./Thighs/Index";
+import ArmsPage from "./Arms/Index";
+import AbsPage from "./Abs/Index";
 
 export default function CatalogVideo() {
   return (
@@ -14,8 +16,11 @@ export default function CatalogVideo() {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.block]}>
           <DancePage/>
-          <UpperPage/>
-          <LowerPage/>
+          <ChestPage/>
+          <ThighsPage/>
+          <ArmsPage/>
+          <AbsPage/>
+          
         </View>
       </ScrollView>
     </View>

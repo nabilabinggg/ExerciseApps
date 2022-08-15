@@ -11,7 +11,7 @@ import {
 import Ionicons from "react-native-vector-icons/Ionicons";
 import axios from "axios";
 
-const LowerPage = () => {
+const ThighsPage = () => {
   const navigation = useNavigation();
   const [videos, setVideos] = useState([]);
   useEffect(() => {
@@ -34,12 +34,12 @@ const LowerPage = () => {
         }}
       >
         <Text style={{ fontSize: 17, fontWeight: "bold", color: "#fff" }}>
-          Lower Body Workout
+          Thighs Workout
         </Text>
         <TouchableOpacity
           onPress={() =>
             navigation.navigate("ComponentVid", {
-              screen: "Lower Body Workout",
+              screen: "Thighs Workout",
             })
           }
         >
@@ -107,7 +107,7 @@ const LowerPage = () => {
     </View>
   );
 };
-export default LowerPage;
+export default ThighsPage;
 
 const styles = StyleSheet.create({
   block: {

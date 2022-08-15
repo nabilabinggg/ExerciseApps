@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import axios from "axios";
 
-export default function UpperCategory({ navigation }) {
+export default function AbsCategory({ navigation }) {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
     axios
@@ -24,7 +24,7 @@ export default function UpperCategory({ navigation }) {
     <View style={[styles.container]}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.block]}>
-          {videos.filter(videos => videos.categories.cat_id == 2).map(video => (
+          {videos.filter(videos => videos.categories.cat_id == 5).map(video => (
             <TouchableOpacity key={video._id} onPress={() => navigation.navigate("ComponentVid", { screen: "Pemutar Video", params: { itemId: video._id } })}>
               <View style={{ marginBottom: 30 }}>
               <Image
